@@ -40,10 +40,15 @@ function startGame(event) {
     const pressedKey = event.key.toUpperCase();
     keyPress(pressedKey);
 }
+
 document.addEventListener("keypress", startGame);
 
 function stopGame(event) {
     document.removeEventListener("keypress", startGame);
+
+    document.querySelectorAll('.key').forEach(function(button) {
+        button.removeEventListener('click')
+    });
 }
 
 // keypress function
