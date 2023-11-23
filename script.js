@@ -210,7 +210,9 @@ document.querySelectorAll('.key').forEach(function(button) {
 
 // event listener for enter
 document.querySelector('.key[data-enter]').addEventListener('click', function() {
-    handleEnterInput();
+    if (key == "ENTER" && letterArray[currentRow][4] != undefined) {
+        handleEnterInput();
+    }
 });
 
 // event listener for backspace
@@ -218,5 +220,7 @@ document.querySelector('.key[data-delete]').addEventListener('click', function()
     const selectedTile = tileGrid.querySelector(":not([data-letter])");
     const previousTile = selectedTile.previousElementSibling;
 
-    handleBackspaceInput(previousTile);
+    if (letterArray[currentRow][0] != undefined) {
+        handleBackspaceInput(previousTile);
+    }
 });
