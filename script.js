@@ -210,8 +210,9 @@ document.querySelectorAll('.key').forEach(function(button) {
 
 // event listener for enter
 document.querySelector('.key[data-enter]').addEventListener('click', function() {
-    if (key == "ENTER" && letterArray[currentRow][4] != undefined) {
+    if (letterArray[currentRow][4] != undefined) {
         handleEnterInput();
+        console.log("lol")
     }
 });
 
